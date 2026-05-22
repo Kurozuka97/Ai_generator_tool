@@ -23,6 +23,7 @@ export default async function handler(req, res) {
         name: m.name,
         context: m.context_length,
         pricing: m.pricing,
+        vision: m.architecture?.modality?.includes('image') ?? false,
       }))
       .sort((a, b) => a.name.localeCompare(b.name));
 
